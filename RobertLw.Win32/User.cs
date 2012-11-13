@@ -1296,6 +1296,7 @@ namespace RobertLw.Win32
         public const int MOD_ALT = 0x1;
         public const int MOD_CONTROL = 0x2;
         public const int MOD_SHIFT = 0x4;
+        public const int MOD_WIN = 0x8;
         public const int MOUSEEVENTF_ABSOLUTE = 0x8000;
         public const int MOUSEEVENTF_LEFTDOWN = 0x2;
         public const int MOUSEEVENTF_LEFTUP = 0x4;
