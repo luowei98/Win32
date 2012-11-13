@@ -3819,11 +3819,11 @@ namespace RobertLw.Win32
         [DllImport("kernel32")]
         public static extern short GetUserDefaultLangID();
 
-        [DllImport("kernel32")]
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         public static extern short GlobalAddAtom(string lpString);
 
-        [DllImport("kernel32")]
-        public static extern short GlobalDeleteAtom(short nAtom);
+        [DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true)]
+        public static extern ushort GlobalDeleteAtom(short nAtom);
 
         [DllImport("kernel32")]
         public static extern short GlobalFindAtom(string lpString);

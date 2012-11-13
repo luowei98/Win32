@@ -1671,8 +1671,8 @@ namespace RobertLw.Win32
         [DllImport("gdi32")]
         public static extern int CreateCompatibleBitmap(IntPtr hdc, int nWidth, int nHeight);
 
-        [DllImport("gdi32")]
-        public static extern int CreateCompatibleDC(IntPtr hdc);
+        [DllImport("gdi32.dll", SetLastError = true)]
+        public static extern IntPtr CreateCompatibleDC(IntPtr hdc);
 
         [DllImport("gdi32")]
         public static extern int CreateDC(string lpDriverName, string lpDeviceName, string lpOutput,
@@ -1766,8 +1766,8 @@ namespace RobertLw.Win32
         [DllImport("gdi32")]
         public static extern int DeleteColorSpace(IntPtr hcolorspace);
 
-        [DllImport("gdi32")]
-        public static extern int DeleteDC(IntPtr hdc);
+        [DllImport("gdi32.dll")]
+        public static extern bool DeleteDC(IntPtr hdc);
 
         [DllImport("gdi32")]
         public static extern int DeleteEnhMetaFile(IntPtr hemf);
@@ -1775,8 +1775,8 @@ namespace RobertLw.Win32
         [DllImport("gdi32")]
         public static extern int DeleteMetaFile(IntPtr hMF);
 
-        [DllImport("gdi32")]
-        public static extern int DeleteObject(IntPtr hObject);
+        [DllImport("gdi32.dll")]
+        public static extern bool DeleteObject(IntPtr hObject);
 
         [DllImport("gdi32")]
         public static extern int DescribePixelFormat(IntPtr hdc, int n, int un,
@@ -2259,8 +2259,8 @@ namespace RobertLw.Win32
         [DllImport("gdi32")]
         public static extern int SelectClipRgn(IntPtr hdc, IntPtr hRgn);
 
-        [DllImport("gdi32")]
-        public static extern int SelectObject(IntPtr hdc, IntPtr hObject);
+        [DllImport("gdi32.dll", ExactSpelling = true, PreserveSig = true, SetLastError = true)]
+        public static extern IntPtr SelectObject(IntPtr hdc, IntPtr hgdiobj);
 
         [DllImport("gdi32")]
         public static extern int SelectPalette(IntPtr hdc, IntPtr hPalette, int bForceBackground);
